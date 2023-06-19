@@ -43,6 +43,7 @@ pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 def show_slide():
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
+    sound.play()
     
     # Chargement et affichage de l'image
     image = pygame.image.load(chemin_image)
@@ -53,7 +54,6 @@ def show_slide():
 
 # Fonction pour passer à l'image suivante
 def slide_next(channel):
-    sound.play()
     global actual_slide
     if actual_slide < len(images) - 1:
         actual_slide += 1
