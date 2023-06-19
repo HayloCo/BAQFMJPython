@@ -22,7 +22,7 @@ GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir �
 chemin_images = "./slides"
 
 # Liste des fichiers d'images présents dans le répertoire
-images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg'))])
+images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg'))])
 print(images)
 
 # Variable pour stocker l'index de l'image actuelle
