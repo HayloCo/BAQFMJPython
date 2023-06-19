@@ -52,9 +52,15 @@ def slide_next(channel):
     screen.blit(image, (0, 0))
     pygame.display.flip()
 
-    if actual_slide < len(images):
+    if actual_slide < len(images) - 1:
         actual_slide += 1
         print("Next slide")
+    elif actual_slide < len(images):
+        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/merci.png")
+        image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
+        screen = pygame.display.get_surface()
+        screen.blit(image, (0, 0))
+        pygame.display.flip()
     else:
         actual_slide = 0
         print("Stop slide")
