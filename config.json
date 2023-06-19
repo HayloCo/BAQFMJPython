@@ -1,6 +1,5 @@
 {
     "random": false, 
-    "count": 0, 
-    "sound": false, 
+    "sound": true, 
     "usbrecord": false
   }
