@@ -14,7 +14,7 @@ with open("config.json", "r") as jsonfile:
     data = json.load(jsonfile)
     print("Read successful")
 print(data)
-
+print(data["sound"])
 pin_go = 16
 pin_stop = 26
 sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.wav")
