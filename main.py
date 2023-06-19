@@ -47,7 +47,7 @@ screen.blit(image, (0, 0))
 pygame.display.flip()
 
 
-def slide_next(channel):
+def slide_next():
     global actual_slide
     print(actual_slide)
     
@@ -66,7 +66,7 @@ def slide_next(channel):
     else:
         slide_stop()
 
-def slide_stop(channel):
+def slide_stop():
     global actual_slide
     actual_slide = 0
     image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
