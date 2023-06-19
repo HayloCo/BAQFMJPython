@@ -52,7 +52,7 @@ def slide_next(channel):
     screen.blit(image, (0, 0))
     pygame.display.flip()
 
-    if actual_slide < len(images) - 1:
+    if actual_slide < len(images):
         actual_slide += 1
         print("Next slide")
     else:
