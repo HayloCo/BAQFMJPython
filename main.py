@@ -50,14 +50,12 @@ pygame.display.flip()
 def slide_next(channel):
     global actual_slide
     print(actual_slide)
+
     if actual_slide < len(images) - 1:
         actual_slide += 1
     else:
         actual_slide = 0
-    show_slide()
-
-# Fonction pour afficher l'image actuelle
-def show_slide():
+    
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
     if(data["sound"] == True):
@@ -72,6 +70,7 @@ def show_slide():
 
 # Fonction pour revenir à l'image précédente
 def slide_stop(channel):
+    global actual_slide
     actual_slide = 0
     image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
     image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
