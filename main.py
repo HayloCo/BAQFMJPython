@@ -19,7 +19,7 @@ GPIO.setup(pin_go, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour avancer à 
 GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir à l'image précédente
 
 # Chemin vers le répertoire contenant les images
-chemin_images = "./slides"
+chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 # Liste des fichiers d'images présents dans le répertoire
 images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg'))])
