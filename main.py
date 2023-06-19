@@ -71,13 +71,13 @@ def slide_next(channel):
     show_slide()
 
 # Fonction pour revenir à l'image précédente
-def slide_back(channel):
-    global actual_slide
-    if actual_slide > 0:
-        actual_slide -= 1
-    else:
-        actual_slide = len(images) - 1
-    show_slide()
+def slide_stop(channel):
+    actual_slide = 0
+    image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+    image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
+    screen = pygame.display.get_surface()
+    screen.blit(image, (0, 0))
+    pygame.display.flip()
 
 def killbaq(event):
     if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
@@ -88,7 +88,7 @@ def killbaq(event):
 
 # Ajout des gestionnaires d'événements pour les broches GPIO
 GPIO.add_event_detect(pin_go, GPIO.FALLING, callback=slide_next, bouncetime=300)
-GPIO.add_event_detect(pin_stop, GPIO.FALLING, callback=slide_back, bouncetime=300)
+GPIO.add_event_detect(pin_stop, GPIO.FALLING, callback=slide_stop, bouncetime=300)
 
 try:
     while True:
