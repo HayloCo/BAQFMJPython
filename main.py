@@ -17,7 +17,7 @@ print(data)
 
 pin_go = 16
 pin_stop = 26
-sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.mp3")
+sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.wav")
 
 
 # Configuration des broches GPIO
