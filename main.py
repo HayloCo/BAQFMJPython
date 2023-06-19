@@ -60,7 +60,7 @@ def slide_next(channel):
         actual_slide = 0
         print("Stop slide")
         sleep(data["debounce_end"])
-        slide_stop(channel)
+        #slide_stop(channel)
 
 
 def slide_stop(channel):
