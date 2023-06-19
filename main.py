@@ -54,8 +54,10 @@ def slide_next(channel):
 
     if actual_slide < len(images) - 1:
         actual_slide += 1
+        print("Next slide")
     else:
         actual_slide = 0
+        print("Stop slide")
 
 def slide_stop(channel):
     global actual_slide
