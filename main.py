@@ -23,6 +23,7 @@ chemin_images = "./slides"
 
 # Liste des fichiers d'images présents dans le répertoire
 images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg'))])
+print images
 
 # Variable pour stocker l'index de l'image actuelle
 image_actuelle = 0
