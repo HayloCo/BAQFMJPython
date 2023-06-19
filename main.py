@@ -3,11 +3,9 @@ import RPi.GPIO as GPIO
 import os
 import pygame
 import pygame.mixer
-
 from time import sleep
 
 pygame.mixer.init()
-
 
 
 with open("config.json", "r") as jsonfile:
@@ -64,6 +62,7 @@ def show_slide():
 # Fonction pour passer à l'image suivante
 def slide_next(channel):
     global actual_slide
+    print(actual_slide)
     if actual_slide < len(images) - 1:
         actual_slide += 1
     else:
