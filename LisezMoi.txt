@@ -1,0 +1,8 @@
+README
+------
+Fichier de configuration.
+config.json à la racine de la clé usb
+random : Afficher les slides de façon aléatoire. oui = true / non = false
+count : nombre de slide à afficher par run. 0 affiche tout.
+sound : joue le son a l'appuie du buzzer. Ajouter un fichier buzz.mp3 à la racine de la clé usb oui = true / non = false
+usbrecord : enregistrer les rushs sur la clé usb externe oui = true / non = false
