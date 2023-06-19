@@ -50,33 +50,21 @@ pygame.display.flip()
 def slide_next(channel):
     global actual_slide
     print(actual_slide)
+    
+    chemin_image = os.path.join(chemin_images, images[actual_slide])
+    print("Affichage du slide:", chemin_image)
+    if(data["sound"] == True):
+        sound.play()
+    image = pygame.image.load(chemin_image)
+    image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
+    screen = pygame.display.get_surface()
+    screen.blit(image, (0, 0))
+    pygame.display.flip()
 
-    if actual_slide < len(images):
-        actual_slide = 0
-        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/merci.png")
-        image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
-        screen = pygame.display.get_surface()
-        screen.blit(image, (0, 0))
-        pygame.display.flip()
-        sleep(10)
-        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
-        image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
-        screen = pygame.display.get_surface()
-        screen.blit(image, (0, 0))
-        pygame.display.flip()
-        actual_slide = 0
+    if actual_slide < len(images) - 1:
+        actual_slide += 1
     else:
-        chemin_image = os.path.join(chemin_images, images[actual_slide])
-        print("Affichage du slide:", chemin_image)
-        if(data["sound"] == True):
-            sound.play()
-        image = pygame.image.load(chemin_image)
-        image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
-        screen = pygame.display.get_surface()
-        screen.blit(image, (0, 0))
-        pygame.display.flip()
-        actual_slide += 1 
-
+        actual_slide = 0
 
 def slide_stop(channel):
     global actual_slide
