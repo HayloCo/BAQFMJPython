@@ -59,6 +59,8 @@ def slide_next(channel):
     else:
         actual_slide = 0
         print("Stop slide")
+        sleep(data["debounce_end"])
+        slide_stop(channel)
 
 
 def slide_stop(channel):
@@ -77,8 +79,8 @@ def killbaq(event):
         pygame.quit()
         sys.exit()
 
-GPIO.add_event_detect(pin_go, GPIO.FALLING, callback=slide_next, bouncetime=300)
-GPIO.add_event_detect(pin_stop, GPIO.FALLING, callback=slide_stop, bouncetime=300)
+GPIO.add_event_detect(pin_go, GPIO.FALLING, callback=slide_next, bouncetime=data["debounce"])
+GPIO.add_event_detect(pin_stop, GPIO.FALLING, callback=slide_stop, bouncetime=data["debounce"])
 
 try:
     while True:

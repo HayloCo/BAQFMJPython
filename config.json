@@ -1,4 +1,6 @@
 {
     "sound": true, 
-    "usbrecord": false
+    "usbrecord": false,
+    "debounce": 1000,
+    "debounce_end": 10
   }
