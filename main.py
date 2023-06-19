@@ -65,7 +65,7 @@ def slide_next(channel):
         screen.blit(image, (0, 0))
         pygame.display.flip()
         actual_slide = 0
-    else
+    else:
         chemin_image = os.path.join(chemin_images, images[actual_slide])
         print("Affichage du slide:", chemin_image)
         if(data["sound"] == True):
