@@ -22,11 +22,11 @@ GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir �
 chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 # Liste des fichiers d'images présents dans le répertoire
-images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg'))])
+images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))])
 print(images)
 
 # Variable pour stocker l'index de l'image actuelle
-image_actuelle = 0
+actual_slide = 0
 
 # Initialisation de pygame
 pygame.init()
@@ -34,8 +34,8 @@ pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
 # Fonction pour afficher l'image actuelle
 def afficher_image():
-    chemin_image = os.path.join(chemin_images, images[image_actuelle])
-    print("Affichage de l'image:", chemin_image)
+    chemin_image = os.path.join(chemin_images, images[actual_slide])
+    print("Affichage du slide:", chemin_image)
     
     # Chargement et affichage de l'image
     image = pygame.image.load(chemin_image)
@@ -46,20 +46,20 @@ def afficher_image():
 
 # Fonction pour passer à l'image suivante
 def slide_next(channel):
-    global image_actuelle
-    if image_actuelle < len(images) - 1:
-        image_actuelle += 1
+    global actual_slide
+    if actual_slide < len(images) - 1:
+        actual_slide += 1
     else:
-        image_actuelle = 0
+        actual_slide = 0
     afficher_image()
 
 # Fonction pour revenir à l'image précédente
 def slide_back(channel):
-    global image_actuelle
-    if image_actuelle > 0:
-        image_actuelle -= 1
+    global actual_slide
+    if actual_slide > 0:
+        actual_slide -= 1
     else:
-        image_actuelle = len(images) - 1
+        actual_slide = len(images) - 1
     afficher_image()
 
 def killbaq(event):
