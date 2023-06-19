@@ -51,7 +51,8 @@ pygame.display.flip()
 def show_slide():
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
-    sound.play()
+    if(data["sound"] == True):
+        sound.play()
     
     # Chargement et affichage de l'image
     image = pygame.image.load(chemin_image)
