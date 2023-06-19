@@ -59,7 +59,8 @@ def slide_next(channel):
     else:
         actual_slide = 0
         sleep(data["debounce_end"])
-        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/merci.png")
+        print("show start slide")
+        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
         image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
         screen = pygame.display.get_surface()
         screen.blit(image, (0, 0))
