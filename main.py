@@ -24,6 +24,7 @@ chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
 images = sorted(images, key=lambda x: int(x.split('.')[0]))
+images.append("/home/fmj/BAQPython/BAQFMJPython/merci.png")
 print(images)
 
 actual_slide = 0
@@ -58,6 +59,7 @@ def slide_next(channel):
     else:
         actual_slide = 0
         print("Stop slide")
+
 
 def slide_stop(channel):
     global actual_slide
