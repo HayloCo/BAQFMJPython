@@ -29,7 +29,7 @@ GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir �
 chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 # Liste des fichiers d'images présents dans le répertoire
-images = sorted([f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))])
+images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))].sort()
 print(images)
 
 # Variable pour stocker l'index de l'image actuelle
@@ -39,6 +39,11 @@ actual_slide = 0
 pygame.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
+image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
+screen = pygame.display.get_surface()
+screen.blit(image, (0, 0))
+pygame.display.flip()
 
 
 # Fonction pour afficher l'image actuelle
