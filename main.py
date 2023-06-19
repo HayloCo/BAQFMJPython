@@ -50,11 +50,6 @@ pygame.display.flip()
 def slide_next(channel):
     global actual_slide
     print(actual_slide)
-
-    #if actual_slide < len(images) - 1:
-    #    actual_slide += 1
-    #else:
-    #    actual_slide = 0
     
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
@@ -67,7 +62,11 @@ def slide_next(channel):
     screen = pygame.display.get_surface()
     screen.blit(image, (0, 0))
     pygame.display.flip()
-    actual_slide += 1
+
+    if actual_slide < len(images) - 1:
+        actual_slide += 1
+    else:
+        actual_slide = 0
 
 # Fonction pour revenir à l'image précédente
 def slide_stop(channel):
