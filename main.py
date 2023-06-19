@@ -30,6 +30,7 @@ chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 # Liste des fichiers d'images présents dans le répertoire
 images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
+images = sorted(images, key=lambda x: int(x.split('.')[0]))
 print(images)
 
 # Variable pour stocker l'index de l'image actuelle
