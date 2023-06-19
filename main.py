@@ -75,7 +75,7 @@ GPIO.add_event_detect(pin_stop, GPIO.FALLING, callback=slide_back, bouncetime=30
 try:
     while True:
         for event in pygame.event.get():
-            quitter_diaporama(event)
+            killbaq(event)
         sleep(0.1)
 
 except KeyboardInterrupt:
