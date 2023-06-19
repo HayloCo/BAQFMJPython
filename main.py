@@ -64,8 +64,8 @@ def slide_next(channel):
         screen = pygame.display.get_surface()
         screen.blit(image, (0, 0))
         pygame.display.flip()
+        sleep(data["debounce_end"])
         print("Thanks slide")
-        return
 
 
 def slide_stop(channel):
