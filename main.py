@@ -7,7 +7,6 @@ from time import sleep
 
 pygame.mixer.init()
 
-
 with open("config.json", "r") as jsonfile:
     data = json.load(jsonfile)
     print("Read successful")
@@ -17,26 +16,18 @@ pin_go = 16
 pin_stop = 26
 sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.wav")
 
-
-# Configuration des broches GPIO
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin_go, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour avancer à l'image suivante
 GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir à l'image précédente
 
-# Chemin vers le répertoire contenant les images
 chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
-# Liste des fichiers d'images présents dans le répertoire
 images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
 images = sorted(images, key=lambda x: int(x.split('.')[0]))
-
-
 print(images)
 
-# Variable pour stocker l'index de l'image actuelle
 actual_slide = 0
 
-# Initialisation de pygame
 pygame.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
