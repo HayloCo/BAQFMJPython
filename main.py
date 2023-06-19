@@ -44,7 +44,7 @@ def slide_next(channel):
     
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
-    if(data["sound"] == True):
+    if(data["sound"] == True && actual_slide == 0):
         sound.play()
     image = pygame.image.load(chemin_image)
     image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
