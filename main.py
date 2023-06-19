@@ -29,7 +29,7 @@ GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir �
 chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
 
 # Liste des fichiers d'images présents dans le répertoire
-images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))].sort()
+images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
 print(images)
 
 # Variable pour stocker l'index de l'image actuelle
