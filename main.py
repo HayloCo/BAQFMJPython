@@ -2,7 +2,12 @@ import json
 import RPi.GPIO as GPIO
 import os
 import pygame
+import pygame.mixer
+
 from time import sleep
+
+pygame.mixer.init()
+
 
 
 with open("config.json", "r") as jsonfile:
@@ -12,6 +17,8 @@ print(data)
 
 pin_go = 16
 pin_stop = 26
+sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.mp3")
+
 
 # Configuration des broches GPIO
 GPIO.setmode(GPIO.BCM)
@@ -33,7 +40,7 @@ pygame.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
 # Fonction pour afficher l'image actuelle
-def afficher_image():
+def show_slide():
     chemin_image = os.path.join(chemin_images, images[actual_slide])
     print("Affichage du slide:", chemin_image)
     
@@ -46,12 +53,13 @@ def afficher_image():
 
 # Fonction pour passer à l'image suivante
 def slide_next(channel):
+    sound.play()
     global actual_slide
     if actual_slide < len(images) - 1:
         actual_slide += 1
     else:
         actual_slide = 0
-    afficher_image()
+    show_slide()
 
 # Fonction pour revenir à l'image précédente
 def slide_back(channel):
@@ -60,7 +68,7 @@ def slide_back(channel):
         actual_slide -= 1
     else:
         actual_slide = len(images) - 1
-    afficher_image()
+    show_slide()
 
 def killbaq(event):
     if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE:
