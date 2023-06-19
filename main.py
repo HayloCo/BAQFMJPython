@@ -39,11 +39,6 @@ actual_slide = 0
 pygame.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
-image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
-image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
-screen = pygame.display.get_surface()
-screen.blit(image, (0, 0))
-pygame.display.flip()
 
 
 # Fonction pour afficher l'image actuelle
