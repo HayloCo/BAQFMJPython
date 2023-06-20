@@ -15,13 +15,13 @@ print(data)
 print(data["sound"])
 pin_go = 16
 pin_stop = 26
-sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.wav")
+sound = pygame.mixer.Sound("/home/fmj/BAQFMJPython/buzz.wav")
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin_go, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour avancer à l'image suivante
 GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir à l'image précédente
 
-chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
+chemin_images = "/home/fmj/BAQFMJPython/slides/"
 
 images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
 images = sorted(images, key=lambda x: int(x.split('.')[0]))
@@ -33,7 +33,7 @@ actual_slide = 0
 pygame.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
 
-image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+image = pygame.image.load("/home/fmj/BAQFMJPython/start.png")
 image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
 screen = pygame.display.get_surface()
 screen.blit(image, (0, 0))
@@ -61,7 +61,7 @@ def slide_next(channel):
         actual_slide = 0
         sleep(data["debounce_end"])
         print("show start slide")
-        image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+        image = pygame.image.load("/home/fmj/BAQFMJPython/start.png")
         image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
         screen = pygame.display.get_surface()
         screen.blit(image, (0, 0))
@@ -73,7 +73,7 @@ def slide_next(channel):
 def slide_stop(channel):
     global actual_slide
     actual_slide = 0
-    image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+    image = pygame.image.load("/home/fmj/BAQFMJPython/start.png")
     image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
     screen = pygame.display.get_surface()
     screen.blit(image, (0, 0))
