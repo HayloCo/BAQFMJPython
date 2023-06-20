@@ -79,7 +79,7 @@ def slide_stop(channel):
     pygame.display.flip()
 
 def killbaq(event):
-    if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and event.key == pygame.K_F:
+    if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and event.key == pygame.K_f:
         print("Stopping the BAQ")
         GPIO.cleanup()
         pygame.quit()
