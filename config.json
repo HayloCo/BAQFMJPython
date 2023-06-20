@@ -1,6 +1,9 @@
 {
+    "nb_slides": 0, 
+    "random": false,
     "sound": true, 
     "usbrecord": false,
     "debounce": 1000,
     "debounce_end": 10
+
   }
