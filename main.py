@@ -80,7 +80,6 @@ def slide_stop(channel):
 
 def killbaq(event):
     keys = pygame.key.get_pressed()
-    move_fullcube = left
     #if event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE and event.key == pygame.K_f:
     if keys[pygame.K_f] and keys[pygame.K_m] and keys[pygame.K_j]:
         print("Stopping the BAQ")
