@@ -3,6 +3,7 @@ import RPi.GPIO as GPIO
 import os
 import pygame
 import pygame.mixer
+from pygame.locals import *
 from time import sleep
 
 pygame.mixer.init()
