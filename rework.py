@@ -18,7 +18,7 @@ GPIO.setup(pin_stop, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # Broche pour revenir �
 pygame.init()
 pygame.mixer.init()
 pygame.display.set_mode((0, 0), pygame.FULLSCREEN)  # Affichage en plein écran
-sound = pygame.mixer.Sound("/home/fmj/BAQPython/BAQFMJPython/buzz.wav")
+sound = pygame.mixer.Sound("/home/fmj/BAQFMJPython/buzz.wav")
 
 # Chargement du fichier de configuration
 with open("config.json", "r") as jsonfile:
@@ -26,7 +26,7 @@ with open("config.json", "r") as jsonfile:
     print("Lecture du fichier de config OK")
 
 # Initialisation des slides
-chemin_images = "/home/fmj/BAQPython/BAQFMJPython/slides/"
+chemin_images = "/home/fmj/BAQFMJPython/slides/"
 images = [f for f in os.listdir(chemin_images) if f.endswith(('.jpg', '.png', '.jpeg','.JPG', '.PNG', '.JPEG'))]
 images = sorted(images, key=lambda x: int(x.split('.')[0]))
 actual_slide = 0
@@ -34,7 +34,7 @@ actual_slide = 0
 ###
 # Affichage de l'écran de démarrage
 
-image = pygame.image.load("/home/fmj/BAQPython/BAQFMJPython/start.png")
+image = pygame.image.load("/home/fmj/BAQFMJPython/start.png")
 image = pygame.transform.scale(image, (pygame.display.Info().current_w, pygame.display.Info().current_h))
 screen = pygame.display.get_surface()
 screen.blit(image, (0, 0))
